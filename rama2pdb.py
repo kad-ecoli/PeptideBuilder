@@ -1,11 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 docstring='''rama2pdb.py seq.fasta rama.txt out.pdb
     convert amino acid sequence "seq.fasta" and ramachandran torsion
-    angle table "rama.txt" to poly-glycine peptide chain "out.pdb"
+    angle table "rama.txt" to peptide chain "out.pdb"
 '''
 
 from PeptideBuilder import Geometry
-import PeptideBuilder
+from PeptideBuilder import PeptideBuilder
 import Bio.PDB
 import numpy as np
 import sys

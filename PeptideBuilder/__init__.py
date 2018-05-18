@@ -7,5 +7,5 @@ The package consists of the following Python modules:
 * Geometry
 """
 __version__ = '1.0.3'
-from .PeptideBuilder import *
-from .Geometry import *
+import PeptideBuilder
+import Geometry
