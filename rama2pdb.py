@@ -37,14 +37,14 @@ if __name__=="__main__":
         exit()
 
     geo = Geometry.geometry(sequence[0])
-    geo.phi=rama_table[0][0]
-    geo.psi_im1=rama_table[0][1]
+    geo.phi=rama_table[0][-2]
+    geo.psi_im1=rama_table[0][-1]
     structure = PeptideBuilder.initialize_res(geo)
 
     for i in range(1,len(sequence)):
         geo = Geometry.geometry(sequence[i])
-        geo.phi=rama_table[i][0]
-        geo.psi_im1=rama_table[i-1][1]
+        geo.phi=rama_table[i][-2]
+        geo.psi_im1=rama_table[i-1][-1]
         structure = PeptideBuilder.add_residue(structure, geo)
     
     out = Bio.PDB.PDBIO()
