@@ -53,8 +53,8 @@ class Geo():
         elif residue_name in "P":
             self.N_CA_C_O_diangle=-45.0
 
-        self.phi=-120
-        self.psi_im1=140
+        self.phi=-120.
+        self.psi_im1=140.
         self.omega=180.0
         self.peptide_bond=1.33
         self.CA_C_N_angle =116.642992978143
@@ -344,7 +344,7 @@ if __name__=="__main__":
         psi_im1=rama_table[:,1].tolist()
         omega=[]
         if rama_table.shape[1]>2:
-            omega=rama_table[:,0].tolist()
+            omega=rama_table[1:,0].tolist()
             phi=rama_table[1:,1].tolist()
             psi_im1=rama_table[:,2].tolist()
         struc=make_structure(AA_chain,phi=phi,psi_im1=psi_im1,omega=omega)
