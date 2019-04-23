@@ -20,7 +20,10 @@ from Bio.PDB.Residue import Residue
 from Bio.PDB.Chain import Chain
 from Bio.PDB.Model import Model
 from Bio.PDB.Structure import Structure
-from Bio.PDB.Vector import calc_dihedral,rotaxis
+try:
+    from Bio.PDB.Vector import calc_dihedral,rotaxis
+except:
+    from Bio.PDB import calc_dihedral,rotaxis
 #from Bio.PDB.Entity import*
 from Geometry import Geo
 import math, warnings
